@@ -1,0 +1,41 @@
+# component/aside
+configEdit: Config Edit
+kitEdit: Kit Edit
+# component/itemFilters
+mcItemFilterInput: Item Filter Input
+filterInput: input filter
+
+tableName: name
+tableOperation: operation
+selectOperation: select it
+
+# component/filterDialog
+filterDialog: filter dialog
+cancel: cancel
+
+# views/config
+outputType: output type
+potion: potion
+item: item
+equipment: equipment
+typeChoose: export item type
+recipe: recipe
+itemName: item name
+lore: lore
+revive: revive
+reviveItem: revive item
+reviveWithInventory: revive with inventory
+close: close
+currentOutputItem: current output item
+exportYaml: export to yaml
+customJson: custom json data
+yamlExport: yaml export code
+currentSelectedItem: current selected item
+
+# components/lore
+preview: preview
+input: input
+
+# dialog
+tip: tip
+developing: developing

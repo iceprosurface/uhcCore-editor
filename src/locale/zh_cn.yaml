@@ -1,0 +1,39 @@
+# component/aside
+configEdit: 设置编辑
+kitEdit: 工具包编辑
+# component/itemFilters
+mcItemFilterInput: 物品筛选器
+filterInput: 请输入内容
+
+tableName: 名称
+tableOperation: 操作
+selectOperation: 选中
+# component/filterDialog
+filterDialog: 筛选对话框
+cancel: 取消
+
+# views/config
+outputType: 输出类型
+potion: 药水
+item: 物品
+equipment: 装备
+typeChoose: 输出物品类型
+recipe: 合成表
+itemName: 物品名称
+lore: 描述
+revive: 复活
+reviveItem: 合成复活
+reviveWithInventory: 物品栏复活
+close: 关闭
+currentOutputItem: 输出物品
+exportYaml: 输出 yaml
+customJson: 自定义 json
+yamlExport: 输出的 yaml 代码
+currentSelectedItem: 当前选中物品
+# components/lore
+preview: 浏览
+input: 输入
+
+# dialog
+tip: 提示
+developing: 正在开发中
