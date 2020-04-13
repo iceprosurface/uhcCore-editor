@@ -1,5 +1,6 @@
 module.exports = {
   outputDir: "docs",
+  publicPath: "/uhcCore-editor",
   chainWebpack: config => {
     config.module
       .rule("i18n")
