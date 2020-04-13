@@ -24,10 +24,16 @@
 
 <script>
 export default {
-  data() {
-    return { val: "" };
-  },
+  props: ["value"],
   computed: {
+    val: {
+      set(v) {
+        this.$emit("update:value", v);
+      },
+      get() {
+        return this.value;
+      }
+    },
     previews() {
       return this.val
         .split(/\n+/)

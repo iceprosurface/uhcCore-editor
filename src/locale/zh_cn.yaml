@@ -30,6 +30,9 @@ exportYaml: 输出 yaml
 customJson: 自定义 json
 yamlExport: 输出的 yaml 代码
 currentSelectedItem: 当前选中物品
+limit: 数量限制
+defaultName: defaultName
+
 # components/lore
 preview: 浏览
 input: 输入
@@ -37,3 +40,5 @@ input: 输入
 # dialog
 tip: 提示
 developing: 正在开发中
+
+pleaseInput: 请输入

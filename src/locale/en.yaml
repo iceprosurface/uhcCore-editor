@@ -1,13 +1,15 @@
 # component/aside
 configEdit: Config Edit
 kitEdit: Kit Edit
+
 # component/itemFilters
 mcItemFilterInput: Item Filter Input
 filterInput: input filter
-
 tableName: name
 tableOperation: operation
 selectOperation: select it
+limit: limit
+defaultName: default name
 
 # component/filterDialog
 filterDialog: filter dialog
@@ -39,3 +41,7 @@ input: input
 # dialog
 tip: tip
 developing: developing
+
+
+
+pleaseInput: pleaseInput

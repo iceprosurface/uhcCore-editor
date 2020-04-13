@@ -10,12 +10,22 @@
         </h4>
         <el-input
           v-model="itemName"
-          :placeholder="$t('filterInput')"
+          :placeholder="$t('pleaseInput')"
         ></el-input>
         <h4>{{ $t("lore") }}</h4>
         <div>
-          <Lore />
+          <Lore :value.sync="lore" />
         </div>
+        <h4>{{ $t("defaultName") }}</h4>
+        <div>
+          <el-switch v-model="defaultName" />
+        </div>
+        <h4>{{ $t("limit") }}</h4>
+        <el-input
+          type="number"
+          v-model="limit"
+          :placeholder="$t('pleaseInput')"
+        ></el-input>
         <h4>{{ $t("revive") }}</h4>
         <h5>{{ $t("reviveItem") }}</h5>
         <div>
@@ -45,7 +55,7 @@
             v-model="itemJSON"
             type="textarea"
             :rows="2"
-            :placeholder="$t('filterInput')"
+            :placeholder="$t('pleaseInput')"
           ></el-input>
         </div>
         <div v-if="itemType === 'ITEM'">
@@ -118,7 +128,11 @@ export default {
       outputId: "",
       // ouput
       doc: "",
+      // lore
+      lore: "",
       dialogVisible: false,
+      defaultName: false,
+      limit: -1,
       next: () => {}
     };
   },
@@ -185,22 +199,29 @@ export default {
           }
           break;
       }
-      const doc = yaml.safeDump(
-        {
-          [this.itemName]: {
-            "1": craftJson(this.craftTable, 0),
-            "2": craftJson(this.craftTable, 1),
-            "3": craftJson(this.craftTable, 2),
-            craft: JSON.stringify(craft)
-          }
+      if (this.lore.length > 0) {
+        craft.lore = this.lore.split(/\n+/);
+      }
+      let itemObj = {
+        "1": craftJson(this.craftTable, 0),
+        "2": craftJson(this.craftTable, 1),
+        "3": craftJson(this.craftTable, 2),
+        "default-name": this.defaultName,
+        "revive-item": this.reviveItem,
+        "revive-with-inventory": this.reviveWithInventory,
+        craft: JSON.stringify(craft),
+        limit: this.limit
+      };
+
+      let yamlObject = {
+        [this.itemName]: itemObj
+      };
+      const doc = yaml.safeDump(yamlObject, {
+        styles: {
+          "!!null": "canonical"
         },
-        {
-          styles: {
-            "!!null": "canonical"
-          },
-          sortKeys: true
-        }
-      );
+        sortKeys: true
+      });
       this.dialogVisible = true;
       this.doc = doc;
       console.log(this.doc);
